@@ -1,0 +1,394 @@
+/*------------------------------------*\
+    Air Miles Icons
+\*------------------------------------*/
+
+/*
+ * Air Miles icon set
+ *
+ * Icons are managed by the UX team via iconmoon.
+ * Try to maintain the icon class names, as changing those will break the implementation of icons
+ */
+
+// ---------- Icon Structure ---------
+
+.am-icon {
+  line-height: inherit;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "AM-icon" !important;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-transform: none;
+  speak: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// ---------- Icon Set **** MAKE CHANGES TO ICONS HERE ---------
+.am-icon-print-secondary:before {
+  content: "\e920";
+}
+
+.am-icon-orders:before {
+  content: "\e91f";
+}
+
+.am-icon-alert:before {
+  content: "\63";
+}
+
+.am-icon-checkmark:before {
+  content: "\e901";
+}
+
+.am-icon-functional-arrow-down:before {
+  content: "\e900";
+}
+
+.am-icon-functional-arrow-left:before {
+  content: "\e902";
+}
+
+.am-icon-functional-arrow-right:before {
+  content: "\e903";
+}
+
+.am-icon-functional-arrow-up:before {
+  content: "\e904";
+}
+
+.am-icon-functional-minus:before {
+  content: "\e905";
+}
+
+.am-icon-functional-plus:before {
+  content: "\e906";
+}
+
+.am-icon-functional-secondary-arrow-down:before {
+  content: "\e907";
+}
+
+.am-icon-functional-secondary-arrow-left:before {
+  content: "\e908";
+}
+
+.am-icon-functional-secondary-arrow-right:before {
+  content: "\e909";
+}
+
+.am-icon-functional-secondary-arrow-up:before {
+  content: "\e90a";
+}
+
+.am-icon-functional-secondary-close:before {
+  content: "\e90b";
+}
+
+.am-icon-functional-secondary-minus:before {
+  content: "\e90c";
+}
+
+.am-icon-functional-secondary-plus:before {
+  content: "\e90d";
+}
+
+.am-icon-functional-toggle-arrow-left:before {
+  content: "\e90e";
+}
+
+.am-icon-functional-toggle-arrow-right:before {
+  content: "\e91d";
+}
+
+.am-icon-delete:before {
+  content: "\e91e";
+}
+
+.am-icon-store-directory:before {
+  content: "\69";
+}
+
+.am-icon-popular-stores:before {
+  content: "\71";
+}
+
+.am-icon-deals-offers:before {
+  content: "\36";
+}
+
+.am-icon-how-it-works:before {
+  content: "\44";
+}
+
+.am-icon-check-in-challenge:before {
+  content: "\25";
+}
+
+.am-icon-partners:before {
+  content: "\6b";
+}
+
+.am-icon-shopping-list:before {
+  content: "\e90f";
+}
+
+.am-icon-dream-rewards:before {
+  content: "\34";
+}
+
+.am-icon-in-store-cash-rewards:before {
+  content: "\43";
+}
+
+.am-icon-search:before {
+  content: "\2d";
+}
+
+.am-icon-sign-out:before {
+  content: "\e910";
+}
+
+.am-icon-inbox:before {
+  content: "\e911";
+}
+
+.am-icon-transactions:before {
+  content: "\e912";
+}
+
+.am-icon-about:before {
+  content: "\e913";
+}
+
+.am-icon-account-lock:before {
+  content: "\e914";
+}
+
+.am-icon-set-balance:before {
+  content: "\e915";
+}
+
+.am-icon-inbox-unopened:before {
+  content: "\e916";
+}
+
+.am-icon-inbox-opened:before {
+  content: "\e917";
+}
+
+.am-icon-turn-device-to-zoom:before {
+  content: "\e918";
+}
+
+.am-icon-shop-in-store:before {
+  content: "\e919";
+}
+
+.am-icon-scan-for-mobile:before {
+  content: "\e91a";
+}
+
+.am-icon-print:before {
+  content: "\e91b";
+}
+
+.am-icon-desktop:before {
+  content: "\e91c";
+}
+
+.am-icon-tip:before {
+  content: "\67";
+}
+
+.am-icon-calculator:before {
+  content: "\3b";
+}
+
+.am-icon-sweep-stakes:before {
+  content: "\68";
+}
+
+.am-icon-events-attractions:before {
+  content: "\32";
+}
+
+.am-icon-merchandise:before {
+  content: "\78";
+}
+
+.am-icon-travel:before {
+  content: "\65";
+}
+
+.am-icon-in-store-cash-rewards2:before {
+  content: "\45";
+}
+
+.am-icon-online-cash-rewards:before {
+  content: "\77";
+}
+
+.am-icon-charity-platform:before {
+  content: "\5e";
+}
+
+.am-icon-photography:before {
+  content: "\79";
+}
+
+.am-icon-entertainment:before {
+  content: "\33";
+}
+
+.am-icon-computer-tablets:before {
+  content: "\21";
+}
+
+.am-icon-communications:before {
+  content: "\40";
+}
+
+.am-icon-accessories:before {
+  content: "\2f";
+}
+
+.am-icon-stage-pass:before {
+  content: "\6a";
+}
+
+.am-icon-exclusive-events:before {
+  content: "\22";
+}
+
+.am-icon-canada-fun-attractions:before {
+  content: "\28";
+}
+
+.am-icon-usa-fun-attractions:before {
+  content: "\62";
+}
+
+.am-icon-spas:before {
+  content: "\6c";
+}
+
+.am-icon-skis:before {
+  content: "\6d";
+}
+
+.am-icon-golf:before {
+  content: "\4b";
+}
+
+.am-icon-cooking:before {
+  content: "\39";
+}
+
+.am-icon-dining:before {
+  content: "\24";
+}
+
+.am-icon-beverages:before {
+  content: "\23";
+}
+
+.am-icon-appliances:before {
+  content: "\2b";
+}
+
+.am-icon-travel-insurance:before {
+  content: "\64";
+}
+
+.am-icon-package-vacation:before {
+  content: "\75";
+}
+
+.am-icon-hotel:before {
+  content: "\46";
+}
+
+.am-icon-cruises:before {
+  content: "\37";
+}
+
+.am-icon-car-rental:before {
+  content: "\2a";
+}
+
+.am-icon-home-care:before {
+  content: "\49";
+}
+
+.am-icon-home-decor:before {
+  content: "\47";
+}
+
+.am-icon-outdoor:before {
+  content: "\76";
+}
+
+.am-icon-tools-automotive:before {
+  content: "\66";
+}
+
+.am-icon-pets:before {
+  content: "\73";
+}
+
+.am-icon-countertop-appliances:before {
+  content: "\38";
+}
+
+.am-icon-chefs-tools-table-setting:before {
+  content: "\35";
+}
+
+.am-icon-pots-pans:before {
+  content: "\3a";
+}
+
+.am-icon-coffee-beverages:before {
+  content: "\26";
+}
+
+.am-icon-gift-card-zone:before {
+  content: "\4c";
+}
+
+.am-icon-active-lifestyle:before {
+  content: "\3d";
+}
+
+.am-icon-personal-care:before {
+  content: "\27";
+}
+
+.am-icon-fashion-accessories:before {
+  content: "\52";
+}
+
+.am-icon-luggage-bags:before {
+  content: "\7a";
+}
+
+.am-icon-kids-baby:before {
+  content: "\42";
+}
+
+.am-icon-hobbies-collectable:before {
+  content: "\4a";
+}
+
+.am-icon-search-bold:before {
+  content: "\e921";
+}
+
+.am-icon-key:before {
+  content: "\e922";
+}
+
+.am-icon-menu:before {
+  content: "\e923";
+}

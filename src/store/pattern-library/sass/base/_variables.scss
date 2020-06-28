@@ -1,0 +1,65 @@
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+
+/*
+ * General variables
+ *
+ * Asset Paths (local, development, production)
+ * Z Index Map
+ * Z Index Function
+ *
+ */
+
+// ---------- Default Env Variables ---------
+// Use the latest assets on the CDN by default
+// This is overriden during gulp compilation for local development
+$env-mode: "production" !default;
+$version: "latest" !default;
+
+// ---------- Asset Paths ---------
+$local-assets: "" !default;
+$dev-assets: "https://dev.pattern-library.airmiles.ca/#{$version}" !default;
+$prod-assets: "https://pattern-library.airmiles.ca/#{$version}" !default;
+$assets-path: "";
+
+// Set the asset path depending on the environment mode
+@if ($env-mode == "development") {
+  $assets-path: $dev-assets;
+} @else if ($env-mode == "production") {
+  $assets-path: $prod-assets;
+} @else {
+  $assets-path: $local-assets;
+}
+
+// Logos
+$amrp-logo: "#{$assets-path}/images/logos/amrp/airmiles-logo.png";
+$amrp-logo-retina: "#{$assets-path}/images/logos/amrp/airmiles-logo@2x.png";
+$amrp-logo-svg: "#{$assets-path}/images/logos/amrp/airmiles-logo.svg";
+
+// ---------- Z Index Map ---------
+
+$z-indexes: (
+  "negative": -1,
+  "lower": 1,
+  "low": 3,
+  "mid": 5,
+  "high": 7,
+  "higher": 9
+);
+
+// ---------- Z Index Function ---------
+// Function that allows you to pull from the Z Index Map
+// Usage: z-index: zindex('high');
+
+@function zindex($level) {
+  @if map-has-key($z-indexes, $level) {
+    $z-index: map-get($z-indexes, $level);
+    @return $z-index;
+  } @else {
+    // Throw error if $level string is not in the map
+    @error 'You have entered `#{$z-index}`, which is a zindex that doesn\'t exist. '
+      + 'Please make sure it is defined in `$z-indexes` map.';
+    @return "";
+  }
+}

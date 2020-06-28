@@ -1,0 +1,128 @@
+/*------------------------------------*\
+   Content Drawer
+\*------------------------------------*/
+
+/*
+ * Content drawer that pops up when a cta button is pressed
+ *
+ * Content Drawer Structure
+ * Responsive
+ */
+
+// ---------- Content Drawer Structure ---------
+
+.am-content-drawer {
+  $default-arrow-offset: "50%";
+
+  width: 100%;
+  margin-top: 15px + 30px;
+  background-color: transparent;
+
+  &--white {
+    @include make-arrow(60px, "white", "top", $default-arrow-offset);
+  }
+
+  &--light {
+    @include make-arrow(
+      60px,
+      "grey-accent-light-4",
+      "top",
+      $default-arrow-offset
+    );
+  }
+
+  &--dark {
+    @include make-arrow(60px, "grey-dark", "top", $default-arrow-offset);
+  }
+}
+
+.am-content-drawer__close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.am-content-drawer__pane {
+  position: relative;
+  padding: 35px 20px 20px;
+  background-color: color("white");
+
+  &--light {
+    background-color: color("grey-accent-light-4");
+  }
+
+  &--dark {
+    background-color: color("grey-dark");
+  }
+
+  &--has-header {
+    padding: 20px;
+  }
+}
+
+.am-content-drawer__header,
+.am-content-drawer__footer {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  background-color: color("grey-dark");
+}
+
+.am-content-drawer__header {
+  padding: 20px;
+
+  &-title {
+    width: 100%;
+    text-align: center;
+    color: color("white");
+  }
+}
+
+.am-content-drawer__footer {
+  flex-wrap: wrap;
+  align-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-weight: $light-font-weight;
+  text-align: left;
+  color: color("white");
+
+  &-button {
+    align-self: flex-end;
+    margin: 20px 0 0;
+  }
+
+  &-left {
+    margin-right: 40px;
+  }
+}
+
+// ---------- Responsive ---------
+
+@include media-query("md") {
+  .am-content-drawer__close-button {
+    top: 10px;
+    right: 10px;
+  }
+
+  .am-content-drawer__pane {
+    padding: 40px;
+  }
+
+  .am-content-drawer__header {
+    padding: 40px;
+  }
+
+  .am-content-drawer__footer {
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 14px 40px;
+
+    &-button {
+      align-self: center;
+      margin-top: 0;
+      margin-left: auto;
+    }
+  }
+}

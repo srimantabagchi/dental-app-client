@@ -1,0 +1,139 @@
+/*------------------------------------*\
+    Icon Buttons
+\*------------------------------------*/
+
+/*
+ * Styling for icon buttons
+ *
+ * Icon Button Structure
+ * Icon Button Colour Variants
+ * Icon button States
+ *
+ * DEPENDENCIES: _buttons.scss
+ * Uses am-button-variant mixin from _buttons.scss
+ */
+
+// ---------- Icon Button Structure ---------
+$icon-button: 30px;
+$icon-button-small: 22px;
+
+.am-icon-button {
+  display: inline-block;
+  width: $icon-button;
+  height: $icon-button;
+  padding: 0;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 50%;
+  line-height: $icon-button;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+%am-icon-button--small {
+  width: $icon-button-small;
+  height: $icon-button-small;
+  line-height: $icon-button-small;
+  font-size: 10px;
+}
+
+// ---------- Icon Button Colour Variants ---------
+
+// Primary
+.am-icon-button--primary {
+  @include am-button-background(color("link-blue"), color("blue-darker"));
+  color: color("white");
+}
+
+.am-icon-button--primary:hover,
+.am-functional-button:hover .am-icon-button--primary {
+  @include am-button-background(
+    darker(color("link-blue"), 15%),
+    darker(color("blue-darker"), 15%)
+  );
+}
+
+.am-icon-button--primary:active,
+.am-functional-button:active .am-icon-button--primary {
+  @include am-button-background(
+    darker(color("link-blue"), 25%),
+    darker(color("blue-darker"), 25%)
+  );
+}
+
+.am-icon-button--primary-white {
+  @include am-button-background(color("white"), color("grey-accent-light-4"));
+  color: color("link-blue");
+}
+
+.am-icon-button--primary-white:hover,
+.am-functional-button:hover .am-icon-button--primary-white,
+.am-icon-button--primary-white:active,
+.am-functional-button:active .am-icon-button--primary-white {
+  color: color("black");
+}
+
+// Secondary
+.am-icon-button--secondary {
+  @extend %am-icon-button--small;
+  background-color: color("grey-accent-light-4");
+  color: color("link-blue");
+}
+
+.am-icon-button--secondary:hover,
+.am-functional-button:hover .am-icon-button--secondary {
+  background-color: darker(color("grey-accent-light-4"), 5%);
+}
+
+.am-icon-button--secondary:active,
+.am-functional-button:active .am-icon-button--secondary {
+  background-color: darker(color("grey-accent-light-4"), 10%);
+}
+
+// ---------- Secondary Icon Button States ---------
+
+.am-icon-button--dark {
+  @extend %am-icon-button--small;
+  background-color: color("black");
+  color: color("white");
+}
+
+.am-icon-button--white {
+  @extend %am-icon-button--small;
+  background-color: color("white");
+  color: color("link-blue");
+}
+
+.am-icon-button--white:hover,
+.am-functional-button:hover .am-icon-button--white,
+.am-icon-button--white:active,
+.am-functional-button:active .am-icon-button--white {
+  color: color("black");
+}
+
+.am-icon-button--small {
+  width: 22px;
+  height: 22px;
+  line-height: 24px;
+  font-size: 10px;
+}
+
+// Icon button info bubble
+// Used exclusively for the contextual info bubble component's button
+
+.am-icon-button--info-bubble {
+  background-color: color("grey-accent-light-4");
+  font-family: $font-stack;
+  color: color("link-blue");
+}
+
+.am-icon-button--info-bubble:hover,
+.am-functional-button:hover .am-icon-button--info-bubble {
+  background-color: darker(color("grey-accent-light-4"), 5%);
+}
+
+.am-icon-button--info-bubble:active,
+.am-functional-button:active .am-icon-button--info-bubble {
+  background-color: darker(color("grey-accent-light-4"), 10%);
+}

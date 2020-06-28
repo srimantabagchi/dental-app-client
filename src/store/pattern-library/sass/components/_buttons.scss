@@ -1,0 +1,149 @@
+/*------------------------------------*\
+    Buttons
+\*------------------------------------*/
+
+/*
+ * Styling for buttons
+ *
+ * Button Helper Mixin
+ * Button Structure
+ * Button Variations
+ */
+
+//---------- BUTTON HELPER MIXINS ---------
+
+// Base background colour
+// Usage @include am-button-background(color('grey'), darker(color('grey'), 20%));
+@mixin am-button-background($bg-base-color, $bg-gradient-color: null) {
+  // Mixin for a background colour gradient with normal background fallback
+  @if $bg-gradient-color {
+    background: linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 50%,
+      $bg-gradient-color 50%,
+      $bg-base-color 85%
+    );
+  }
+
+  // Set default background colour
+  background-color: $bg-base-color;
+}
+
+// ---------- Button Structure ---------
+
+.am-button {
+  display: inline-block;
+  position: relative;
+  padding: 12px 30px 15px;
+  border: 0;
+  background: none;
+  line-height: 1.33em;
+  font-family: inherit;
+  font-size: $base-font-size;
+  font-weight: $medium-font-weight;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  // Disabled state
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active {
+    @include am-button-background(color("grey"), darker(color("grey"), 9%));
+    color: color("grey-accent");
+    cursor: not-allowed;
+  }
+}
+
+// ---------- Button Variations ---------
+
+// Primary Button
+.am-button--primary {
+  @include am-button-background(color("link-blue"), color("blue-darker"));
+  color: color("white");
+
+  &:hover {
+    @include am-button-background(
+      darker(color("link-blue"), 15%),
+      darker(color("blue-darker"), 15%)
+    );
+  }
+
+  &:active {
+    @include am-button-background(
+      darker(color("link-blue"), 25%),
+      darker(color("blue-darker"), 25%)
+    );
+  }
+}
+
+.am-button--primary-white {
+  @include am-button-background(color("white"), color("grey-accent-light-4"));
+  color: color("link-blue");
+
+  &:hover {
+    color: color("copy");
+  }
+
+  &:active {
+    color: color("black");
+  }
+
+  // Disabled state
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active {
+    @include am-button-background(color("white"), color("grey-accent-light-4"));
+    color: color("grey-accent");
+    cursor: not-allowed;
+  }
+}
+
+// Secondary Button
+.am-button--secondary {
+  background-color: color("grey");
+  color: color("white");
+
+  &:hover {
+    background-color: darker(color("grey"), 15%);
+  }
+
+  &:active {
+    background-color: darker(color("grey"), 25%);
+  }
+}
+
+.am-button--secondary-white {
+  background-color: color("white");
+  color: color("link-blue");
+
+  &:hover {
+    color: color("copy");
+  }
+
+  &:active {
+    color: color("black");
+  }
+}
+
+// Link button
+// Styled like an anchor but keeps button padding and behaviour
+.am-button--link {
+  font-weight: $bold-font-weight;
+  color: color("link-blue");
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Wide Button
+.am-button--wide {
+  width: 100%;
+  max-width: 500px;
+}

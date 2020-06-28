@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    Utilities
+\*------------------------------------*/
+
+/*
+ * General utility classes and mixins
+ *
+ * Common Floats
+ * Alignments
+ * Lightness and Darkness Functions
+ * Make Arrow Mixin
+ *
+ */
+
+// ---------- Common Floats ---------
+
+// applying auto margins makes it work as expected with flexbox
+.am-pull--left {
+  float: left;
+  margin-left: auto;
+}
+
+.am-pull--right {
+  float: right;
+  margin-right: auto;
+}
+
+// ---------- Aligning ---------
+.am-align--right {
+  text-align: right;
+}
+
+.am-align--center {
+  text-align: center;
+}
+
+// ---------- Spacing ---------
+.nobr {
+  white-space: nowrap;
+}
+
+// ---------- Lightness / Darkness functions ---------
+
+// Function to alter the lightness and darkness of a colour. Used to match the UX team's definition of lighter/darker variations
+// The parameters are: color (using color() function) and percentage 0% - 100%
+// Usage example: background-color: lighter(color('blue'), 20%);
+
+@function lighter($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+
+@function darker($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+// ---------- Make Arrow Mixin ---------
+
+// Mixin to attach an arrow to an element by creating a pseudo element triangle
+// The parameters are: size (any unit), color (from the color map), which edge that the arrow should
+// attach to (top, bottom, left, right), and optional positioning (can be
+// any unit, but the default is 50% so arrow is centered)
+
+@mixin make-arrow($size, $color, $edge, $position: 50%) {
+  $half-arrow-size: $size / 2;
+  position: relative;
+  z-index: zindex("low");
+
+  &::after {
+    position: absolute;
+    content: "";
+    border-width: $half-arrow-size;
+    border-style: solid;
+    border-color: transparent;
+
+    @if $edge == top {
+      bottom: 100%;
+      left: calc(#{$position} - #{$half-arrow-size});
+      border-bottom-color: color($color);
+    } @else if $edge == right {
+      top: calc(#{$position} - #{$half-arrow-size});
+      left: 100%;
+      border-left-color: color($color);
+    } @else if $edge == bottom {
+      top: 100%;
+      left: calc(#{$position} - #{$half-arrow-size});
+      border-top-color: color($color);
+    } @else if $edge == left {
+      top: calc(#{$position} - #{$half-arrow-size});
+      right: 100%;
+      border-right-color: color($color);
+    } @else {
+      @error 'You have entered `#{$edge}`, which is an arrow edge that doesn\'t exist. The parameter must one of the following strings: \'top\', \'bottom\', \'left\' or \'right\'.';
+    }
+  }
+}

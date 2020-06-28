@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    Layouts
+\*------------------------------------*/
+
+/*
+ * General layouts and containers
+ *
+ * Layouts
+ * Containers
+ * Responsive
+ */
+
+// ---------- Layouts ---------
+
+// ---------- Containers ---------
+
+.container {
+  min-width: 320px;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.am-margin--25 {
+  margin-bottom: 25px;
+}
+// ---------- Responsive ---------
+
+@include media-query("sm") {
+  .container {
+    padding: 0 15px;
+  }
+}

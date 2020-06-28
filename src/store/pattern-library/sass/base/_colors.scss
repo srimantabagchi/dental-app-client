@@ -1,0 +1,145 @@
+/*------------------------------------*\
+    Brand styles
+\*------------------------------------*/
+
+/*
+ * All branded styling for Air Miles
+ *
+ * Includes:
+ * Brand Color Manifest
+ * Color Map Function
+ * Background color convenience classes
+ * Text color convenience classes
+ */
+
+// ---------- Air Miles Brand Color map --------
+// Brand colours are the primary colours used on the site. The light variations are for backgrounds.
+
+$color-map: (
+  "white": #fff,
+  "black": #231f20,
+  "onyx": #000,
+  "grey-dark": #5e5e5e,
+  "grey": #7c7e80,
+  "grey-light-1": mix(#fff, #7c7e80, 20%),
+  "grey-light-2": mix(#fff, #7c7e80, 40%),
+  "grey-light-3": mix(#fff, #7c7e80, 60%),
+  "grey-light-4": mix(#fff, #7c7e80, 80%),
+  "grey-accent": #bbbdbf,
+  "grey-accent-light-1": mix(#fff, #bbbdbf, 20%),
+  "grey-accent-light-2": mix(#fff, #bbbdbf, 40%),
+  "grey-accent-light-3": mix(#fff, #bbbdbf, 60%),
+  "grey-accent-light-4": mix(#fff, #bbbdbf, 80%),
+  "blue-darker": #12619a,
+  "blue": #1790cc,
+  "blue-light-1": mix(#fff, #1790cc, 20%),
+  "blue-light-2": mix(#fff, #1790cc, 40%),
+  "blue-light-3": mix(#fff, #1790cc, 60%),
+  "blue-light-4": mix(#fff, #1790cc, 80%),
+  "blue-accent": #61c1ee,
+  "blue-accent-light-1": mix(#fff, #61c1ee, 20%),
+  "blue-accent-light-2": mix(#fff, #61c1ee, 40%),
+  "blue-accent-light-3": mix(#fff, #61c1ee, 60%),
+  "blue-accent-light-4": mix(#fff, #61c1ee, 80%),
+  "teal": #15a4aa,
+  "teal-light-1": mix(#fff, #15a4aa, 20%),
+  "teal-light-2": mix(#fff, #15a4aa, 40%),
+  "teal-light-3": mix(#fff, #15a4aa, 60%),
+  "teal-light-4": mix(#fff, #15a4aa, 80%),
+  "teal-accent": #69c8cf,
+  "teal-accent-light-1": mix(#fff, #69c8cf, 20%),
+  "teal-accent-light-2": mix(#fff, #69c8cf, 40%),
+  "teal-accent-light-3": mix(#fff, #69c8cf, 60%),
+  "teal-accent-light-4": mix(#fff, #69c8cf, 80%),
+  "green": #44a648,
+  "green-light-1": mix(#fff, #44a648, 20%),
+  "green-light-2": mix(#fff, #44a648, 40%),
+  "green-light-3": mix(#fff, #44a648, 60%),
+  "green-light-4": mix(#fff, #44a648, 80%),
+  "green-accent": #bed630,
+  "green-accent-light-1": mix(#fff, #bed630, 20%),
+  "green-accent-light-2": mix(#fff, #bed630, 40%),
+  "green-accent-light-3": mix(#fff, #bed630, 60%),
+  "green-accent-light-4": mix(#fff, #bed630, 80%),
+  "orange": #de7426,
+  "orange-light-1": mix(#fff, #de7426, 20%),
+  "orange-light-2": mix(#fff, #de7426, 40%),
+  "orange-light-3": mix(#fff, #de7426, 60%),
+  "orange-light-4": mix(#fff, #de7426, 80%),
+  "orange-accent": #fcb813,
+  "orange-accent-light-1": mix(#fff, #fcb813, 20%),
+  "orange-accent-light-2": mix(#fff, #fcb813, 40%),
+  "orange-accent-light-3": mix(#fff, #fcb813, 60%),
+  "orange-accent-light-4": mix(#fff, #fcb813, 80%),
+  "purple": #8e499b,
+  "purple-light-1": mix(#fff, #8e499b, 20%),
+  "purple-light-2": mix(#fff, #8e499b, 40%),
+  "purple-light-3": mix(#fff, #8e499b, 60%),
+  "purple-light-4": mix(#fff, #8e499b, 80%),
+  "purple-accent": #b271ae,
+  "purple-accent-light-1": mix(#fff, #b271ae, 20%),
+  "purple-accent-light-2": mix(#fff, #b271ae, 40%),
+  "purple-accent-light-3": mix(#fff, #b271ae, 60%),
+  "purple-accent-light-4": mix(#fff, #b271ae, 80%),
+  "pink": #d30e8b,
+  "pink-light-1": mix(#fff, #d30e8b, 20%),
+  "pink-light-2": mix(#fff, #d30e8b, 40%),
+  "pink-light-3": mix(#fff, #d30e8b, 60%),
+  "pink-light-4": mix(#fff, #d30e8b, 80%),
+  "pink-accent": #d963a4,
+  "pink-accent-light-1": mix(#fff, #d963a4, 20%),
+  "pink-accent-light-2": mix(#fff, #d963a4, 40%),
+  "pink-accent-light-3": mix(#fff, #d963a4, 60%),
+  "pink-accent-light-4": mix(#fff, #d963a4, 80%),
+  "gold": #a28836,
+  "gold-light-1": mix(#fff, #a28836, 20%),
+  "gold-light-2": mix(#fff, #a28836, 40%),
+  "gold-light-3": mix(#fff, #a28836, 60%),
+  "gold-light-4": mix(#fff, #a28836, 80%),
+  "link-blue": #0a6fb3,
+  "copy": #5e5e5e,
+  "copy-dark": #231f20,
+  "error-light": #f9e8f1,
+  "alert-success": #f2f7d6,
+  "alert-warning": #fff1d9,
+  "alert-fail": #f9e7f1,
+  "alert-info": #daedf7
+);
+
+// ---------- Color Map Function ---------
+// Function that allows you to pull from the color map
+// Usage: border-color: color('purple-light');
+// Optional $variant parameter for the dark, darker, or light version of a color
+
+@function color($color, $variant: null) {
+  @if map-has-key($color-map, $color) {
+    $color: map-get($color-map, $color);
+    @return $color;
+  } @else {
+    // Throw error if color string is not in the map
+    @error 'You have entered `#{$color}`, which is a color that doesn\'t exist. '
+      + 'Please make sure it is defined in `$color-map` map.';
+    @return "";
+  }
+}
+
+// ---------- Background Colors ---------
+
+@each $color, $val in $color-map {
+  .am-background--#{$color} {
+    background-color: color("#{$color}");
+  }
+}
+
+// ---------- Typography Modifiers ---------
+// Not every color can be used as a text color
+$text-color-list: "white", "black", "onyx", "link-blue", "copy", "copy-dark",
+  "gold", "grey", "grey-dark", "blue", "blue-accent", "blue-darker", "teal",
+  "teal-accent", "green", "green-accent", "orange", "orange-accent", "purple",
+  "purple-accent", "pink", "pink-accent";
+
+@each $color in $text-color-list {
+  .am-text--#{$color} {
+    color: color("#{$color}");
+  }
+}

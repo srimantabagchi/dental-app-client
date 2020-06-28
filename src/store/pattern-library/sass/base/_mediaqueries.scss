@@ -1,0 +1,52 @@
+/*------------------------------------*\
+    Media Queries
+\*------------------------------------*/
+
+/*
+ * Defining the break points and media queries mixin
+ *
+ * Breakpoint Variable Map
+ * Media Query Mixin
+ * Retina Query Mixin
+ */
+
+// ---------- Breakpoint Variable Map ---------
+
+$breakpoints: (
+  "xs": 320px,
+  "sm": 544px,
+  "md": 768px,
+  "lg": 1140px
+);
+
+// ---------- Media Query Mixin ---------
+// Mixin to generate a media query from a specified breakpoint,
+// optionally ending at bigger breakpoint
+// Usage: @include media-query('sm') { ... } OR @include media-query('sm', 'md')
+
+@mixin media-query($from: "sm", $until: false) {
+  $from-breakpoint: map-get($breakpoints, $from);
+  $until-breakpoint: map-get($breakpoints, $until);
+
+  // Only output max width in query if $until parameter is specified
+  @if $from-breakpoint and $until-breakpoint {
+    @media (min-width: $from-breakpoint) and (max-width: $until-breakpoint - 1px) {
+      @content;
+    }
+  } @else if $from-breakpoint {
+    @media (min-width: $from-breakpoint) {
+      @content;
+    }
+  } @else {
+    @error 'You have entered `#{$from}` as the media query\'s starting breakpoint. The first parameter must be a string specifying the starting breakpoint (\'xs\',\'sm\',\'md\',\'lg\',).';
+  }
+}
+
+// ---------- Retina Query Mixin ---------
+@mixin retina {
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}

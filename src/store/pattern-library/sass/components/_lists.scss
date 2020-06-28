@@ -1,0 +1,22 @@
+.am-list--disc {
+  list-style: disc;
+}
+
+.am-list--circle {
+  list-style: circle;
+}
+
+.am-list--square {
+  list-style: square;
+}
+
+.am-list__item {
+  margin-left: 2em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  display: list-item;
+}
+
+.am-list__item--inline {
+  display: inline;
+}

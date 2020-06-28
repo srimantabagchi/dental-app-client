@@ -1,0 +1,52 @@
+@import "./TopVariables";
+@import "../store/pattern-library/sass/base/colors";
+.top-nav-bar-wrapper {
+  margin: 0 auto;
+  background-color: $bb8-header-background-color;
+  background-size: contain;
+  height: 96px;
+  box-shadow: none;
+  h1 {
+    color: color("white");
+    font-size: 40px;
+  }
+  margin-bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.top-nav-bar {
+  font-family: "Omnes", Calibri, "Trebuchet MS";
+  @extend .top-basic-flex;
+  width: 1366px;
+  @media screen and (max-width: 1365px) {
+    width: 100%;
+  }
+  // margin: 0 auto;
+
+  * {
+    flex-grow: 1;
+  }
+
+  .top-title-img-wrapper {
+    flex-grow: 0;
+    img {
+      height: auto;
+      width: 48px;
+    }
+  }
+
+  .top-title-wapper {
+    @extend .top-basic-flex;
+
+    * {
+      margin-right: 1em;
+    }
+
+    h1 {
+      font-weight: lighter;
+    }
+  }
+}

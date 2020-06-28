@@ -1,0 +1,106 @@
+/*------------------------------------*\
+    Alerts
+\*------------------------------------*/
+
+/*
+ * Styling for alerts
+ *
+ * Alert Structure
+ * Alert Style
+ * Responsive
+ */
+
+// ---------- Alert Structure ---------
+
+.am-alert {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  vertical-align: middle;
+  border: 0;
+  white-space: nowrap;
+}
+
+.am-alert__icon {
+  $alert-icon-size: 25px;
+  display: inline-block;
+  width: $alert-icon-size;
+  height: $alert-icon-size;
+  vertical-align: middle;
+  line-height: $alert-icon-size;
+  font-family: "AM-icon" !important;
+  font-size: $alert-icon-size;
+}
+
+.am-alert__message {
+  $alert-icon-size: 30px;
+  display: inline-block;
+  width: calc(100% - #{$alert-icon-size} - (#{$alert-icon-size}/ 2));
+  margin: 0 0 0 10px;
+  padding: 12px 10px 12px 0;
+  vertical-align: middle;
+  font-weight: $medium-font-weight;
+  white-space: normal;
+  color: color("grey-dark");
+}
+
+.am-alert__container {
+  padding: 0 15px;
+}
+
+// ---------- Alert Style ---------
+
+.am-alert--success {
+  background-color: color("alert-success");
+
+  .am-alert__icon {
+    color: darker(color("green"), 10%);
+  }
+}
+
+.am-alert--fail {
+  background-color: color("alert-fail");
+
+  .am-alert__icon {
+    color: darker(color("pink"), 10%);
+  }
+}
+
+.am-alert--warning {
+  background-color: color("alert-warning");
+
+  .am-alert__icon {
+    color: darker(color("orange"), 10%);
+  }
+}
+
+.am-alert--info {
+  background-color: color("alert-info");
+
+  .am-alert__icon {
+    color: darker(color("blue"), 10%);
+  }
+}
+
+// ---------- Responsive ---------
+
+@include media-query("sm") {
+  $alert-icon-size: 40px;
+
+  .am-alert__icon {
+    width: $alert-icon-size;
+    height: $alert-icon-size;
+    line-height: $alert-icon-size;
+    font-size: $alert-icon-size;
+  }
+
+  .am-alert__message {
+    width: calc(100% - #{$alert-icon-size} - (#{$alert-icon-size}/ 2));
+    margin: 0 0 0 15px;
+    padding: 25px 20px 25px 0;
+  }
+
+  .am-alert__container {
+    padding: 0 20px;
+  }
+}

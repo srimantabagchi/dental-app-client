@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    PATTERN LIBRARY STYLES
+\*------------------------------------*/
+
+/*
+ * All styles for the project are here
+ *
+ * Utilities
+ * Base
+ * Components
+ * Layouts / Modules
+ *
+ */
+
+// ---------- Utilities ---------
+@import "base/utilities";
+
+// ---------- Base ---------
+@import "base/variables";
+@import "base/reset";
+@import "base/mediaqueries";
+@import "base/grid";
+@import "base/colors";
+@import "base/typography";
+@import "base/icons";
+
+// ---------- Components ---------
+@import "components/alerts";
+@import "components/buttons";
+@import "components/checkboxes-radios";
+@import "components/content-drawer";
+@import "components/bubbles";
+@import "components/icon-buttons";
+@import "components/functional-buttons";
+@import "components/inputs";
+@import "components/modal";
+@import "components/divider";
+@import "components/lists";
+
+// ---------- Layouts / Modules ---------
+@import "layouts/layouts";

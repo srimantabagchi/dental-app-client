@@ -1,0 +1,95 @@
+/*------------------------------------*\
+    Dividers
+\*------------------------------------*/
+
+/*
+ * Styling for dividers
+ * Divider Structure
+ * Divider Style
+ * Responsive
+ */
+
+$divider-font-size: 25px;
+$divider-color: color("grey-light-3");
+$divider-font-color: color("grey");
+
+// ---------- Divider Structure ---------
+
+// ---------- Vertical Divider ---------
+@mixin am-divider--horizontal {
+  background: color("white");
+  color: $divider-font-color;
+  text-align: center;
+  line-height: 0.1em;
+  margin: 25px 20px;
+  padding: 15px;
+  display: inline;
+}
+
+@mixin am-divider--vertical {
+  color: $divider-font-color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 15px;
+  background: color("white");
+  text-align: center;
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 50%;
+  margin-top: -24px;
+  left: -51px;
+  width: 102px;
+}
+
+@mixin am-divider--horizontal-style {
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid $divider-color;
+  line-height: 0.1em;
+  margin: 25px 20px;
+}
+
+.am-divider {
+  position: relative;
+
+  &.am-divider--horizontal {
+    @include am-divider--horizontal-style;
+
+    .am-divider__text {
+      @include am-divider--horizontal;
+      text-transform: uppercase;
+      font-size: $divider-font-size;
+    }
+  }
+
+  &.am-divider--vertical {
+    @include media-query("md") {
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: $divider-color;
+      z-index: 1;
+      margin: 25px 50px;
+      display: block;
+    }
+
+    @include media-query("xs", "md") {
+      @include am-divider--horizontal-style;
+    }
+
+    .am-divider__text {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: $divider-font-size;
+
+      @include media-query("xs", "md") {
+        @include am-divider--horizontal;
+      }
+
+      @include media-query("md") {
+        @include am-divider--vertical;
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+/*------------------------------------*\
+    Checkboxes & Radios
+\*------------------------------------*/
+
+/*
+ * Styling for Checkboxes & Radios
+ *
+ * Structure
+ * Input styling
+ * Hover state
+ * Focus state
+ * Checked state
+ * Error state
+ */
+
+// ---------- Structure ---------
+
+.am-checkbox,
+.am-radio {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin: 10px 0 0;
+  white-space: nowrap;
+}
+
+// ---------- Input styling ---------
+
+.am-checkbox__input,
+.am-radio__input {
+  opacity: 0;
+  position: absolute;
+
+  // ---------- Disabled state ---------
+
+  &[disabled] ~ .am-checkbox__box,
+  &[disabled] ~ .am-radio__circle {
+    border: 2px solid color("grey-accent-light-3");
+    background-color: color("grey-accent-light-3");
+    cursor: not-allowed;
+  }
+}
+
+.am-checkbox__box {
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  align-self: flex-start;
+  margin: 0 15px 0 0;
+  border: 2px solid color("grey-accent-light-3");
+}
+
+.am-radio__circle {
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  height: 35px;
+  align-self: flex-start;
+  margin: 0 15px 0 0;
+  padding: 4px;
+  border: 2px solid color("grey-accent-light-3");
+  border-radius: 50%;
+}
+
+.am-checkbox__text,
+.am-radio__text {
+  display: inline-block;
+  width: calc(100% - 35px - 15px);
+  font-size: $base-font-size;
+  font-weight: $medium-font-weight;
+  white-space: normal;
+  color: color("grey-dark");
+}
+
+// ---------- Hover state ---------
+
+// Change hover state when not a disabled element, not a checked state, or not on an error state
+
+.am-checkbox__input:hover ~ .am-checkbox__box,
+.am-radio__input:hover ~ .am-radio__circle {
+  border: 2px solid color("grey-accent-light-1");
+}
+
+// ---------- Focus state ---------
+
+// Change focus state when not on an error state
+
+.am-checkbox__input:focus ~ .am-checkbox__box,
+.am-radio__input:focus ~ .am-radio__circle {
+  border: 2px solid color("blue-accent");
+}
+
+// ---------- Checked state ---------
+
+.am-checkbox__input:checked ~ .am-checkbox__box {
+  @extend .am-icon-checkmark;
+  background-color: color("grey-accent-light-3");
+
+  &::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 32px;
+    font-family: "AM-icon" !important;
+    font-size: 30px;
+    text-align: center;
+    color: color("blue");
+  }
+}
+
+.am-radio__input:checked ~ .am-radio__circle::before {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  content: "";
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  border-radius: 50%;
+  background-color: color("blue");
+}
+
+// ---------- Error states ---------
+
+.am-checkbox--error,
+.am-radio--error {
+  .am-checkbox__box,
+  .am-radio__circle {
+    border: 2px solid color("pink-accent-light-4");
+    background-color: color("pink-accent-light-4");
+  }
+
+  .am-checkbox__input:hover ~ .am-checkbox__box,
+  .am-radio__input:hover ~ .am-radio__circle {
+    border: 2px solid color("pink");
+    background-color: color("pink-accent-light-4");
+  }
+
+  .am-checkbox__input:focus ~ .am-checkbox__box,
+  .am-radio__input:focus ~ .am-radio__circle {
+    border: 2px solid color("pink");
+    background-color: color("pink-accent-light-4");
+  }
+}
+
+// ---------- Variations ---------
+.am-checkbox--small {
+  .am-checkbox__box {
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+  }
+
+  .am-checkbox__text {
+    width: calc(100% - 25px - 12px);
+    font-size: $small-font-size;
+  }
+
+  .am-checkbox__input:checked ~ .am-checkbox__box {
+    &::before {
+      line-height: 21px;
+      font-size: 21px;
+    }
+  }
+}

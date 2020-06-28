@@ -1,0 +1,143 @@
+/*------------------------------------*\
+    Input elements
+\*------------------------------------*/
+
+/*
+ * Styling for input elements
+ *
+ * Input Grouping
+ * Input Label
+ * Input Text
+ * Dropdown
+ * Error and Success States
+ */
+
+// ---------- Input Grouping ---------
+
+.am-form-group {
+  margin-bottom: 30px;
+
+  @include media-query("md") {
+    margin-bottom: 40px;
+  }
+}
+
+.am-form-group--section {
+  margin-bottom: 50px;
+
+  @include media-query("md") {
+    margin-bottom: 60px;
+  }
+}
+
+.am-form-group--small {
+  margin-bottom: 10px;
+
+  @include media-query("md") {
+    margin-bottom: 20px;
+  }
+}
+
+// ---------- Input Label ---------
+
+.am-input__label {
+  font-size: $small-font-size;
+  color: color("grey-dark");
+}
+
+// ---------- Input Text ---------
+
+.am-input-text {
+  position: relative;
+  margin: 7px 0;
+}
+
+.am-input-text__field {
+  width: 100%;
+  height: 50px;
+  padding: 0 40px 0 18px;
+  border: 0;
+  background-color: color("grey-accent-light-4");
+  font-family: inherit;
+  font-size: $base-font-size;
+  color: color("grey-dark");
+
+  &:focus {
+    outline: color("blue-accent") solid 3px;
+    outline-offset: -3px;
+  }
+
+  &::placeholder {
+    font-size: $base-font-size;
+    color: color("grey-light-2");
+  }
+
+  &[disabled] {
+    border-color: darken(color("grey-accent-light-4"), 10%);
+    background-color: darken(color("grey-accent-light-4"), 10%);
+    cursor: not-allowed;
+  }
+}
+
+.am-input-text__icon {
+  position: absolute;
+  top: calc(50% - 13px);
+  right: 14px;
+  font-size: 22px;
+}
+
+// ---------- Dropdown ---------
+
+.am-input-dropdown {
+  position: relative;
+  margin: 7px 0;
+
+  &::before,
+  &::after {
+    position: absolute;
+    right: 21px;
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 17px;
+    border-bottom: 7px solid color("grey-dark");
+  }
+
+  &::after {
+    top: 27px;
+    border-top: 7px solid color("grey-dark");
+  }
+}
+
+.am-input-dropdown__field {
+  border-radius: 0;
+  cursor: pointer;
+  appearance: none;
+}
+
+// ---------- Error and Success States ---------
+
+.am-input-text--error .am-input-text__field,
+.am-input-dropdown--error .am-input-dropdown__field {
+  border-color: color("pink-accent-light-4");
+  background-color: color("pink-accent-light-4");
+
+  &:focus {
+    outline: color("pink") solid 3px;
+    outline-offset: -3px;
+  }
+}
+
+.am-input-text--error .am-input-text__icon {
+  color: color("pink");
+}
+
+.am-input-text--success .am-input-text__icon {
+  color: color("green");
+}

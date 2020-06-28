@@ -1,0 +1,321 @@
+/*------------------------------------*\
+    Typography
+\*------------------------------------*/
+
+/*
+ * All typography settings for Air Miles
+ *
+ * Includes:
+ * Global Font Variables
+ * Fonts Declarations
+ * Typography Definitions
+ * Responsive Variations
+ * Typography Modifiers
+ */
+
+// ---------- Global Font Variables ---------
+
+$font-family: "omnes";
+$font-stack: $font-family, Calibri, "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
+
+$font-path: "#{$assets-path}/fonts" !default;
+
+// Text Sizes
+$base-font-size: 18px;
+$small-font-size: 14px;
+
+// Line Heights
+$base-line-height: 1.22;
+
+// Font Weights
+$light-font-weight: 300;
+$medium-font-weight: 400;
+$bold-font-weight: 500;
+
+// ---------- Fonts ---------
+
+// FONT FACE SETUP
+// Order to call webfonts
+// .woff2 - /* if available */
+// .woff -  /* Modern Browsers */
+// .ttf  -  /* Safari, Android, iOS */
+// .svg  -  /* Legacy iOS */
+
+// Omnes Light
+@font-face {
+  font-family: "omneslight";
+  font-style: normal;
+  font-weight: $light-font-weight;
+  src: url("#{$font-path}/omneslight-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omneslight-webfont.woff") format("woff"),
+    url("#{$font-path}/omneslight-webfont.ttf") format("truetype"),
+    url("#{$font-path}/omneslight-webfont.svg#omneslight") format("svg");
+}
+
+// Omnes Light Italic
+@font-face {
+  font-family: "omneslight-italic";
+  font-style: italic;
+  font-weight: $light-font-weight;
+  src: url("#{$font-path}/omneslight-italic-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omneslight-italic-webfont.woff") format("woff"),
+    url("#{$font-path}/omneslight-italic-webfont.ttf") format("ttf"),
+    url("#{$font-path}/omneslight-italic-webfont.svg#omneslight-italic")
+      format("svg");
+}
+
+// Omnes Regular
+@font-face {
+  font-family: "omnes";
+  font-style: normal;
+  font-weight: $medium-font-weight;
+  src: url("#{$font-path}/omnes-regular-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omnes-regular-webfont.woff") format("woff"),
+    url("#{$font-path}/omnes-regular-webfont.ttf") format("truetype"),
+    url("#{$font-path}/omnes-regular-webfont.svg#omnes") format("svg");
+}
+
+// Omnes Regular Italic
+@font-face {
+  font-family: "omnesregular-italic";
+  font-style: italic;
+  font-weight: $medium-font-weight;
+  src: url("#{$font-path}/omnes-italic-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omnes-italic-webfont.woff") format("woff"),
+    url("#{$font-path}/omnes-italic-webfont.ttf") format("truetype"),
+    url("#{$font-path}/omnes-italic-webfont.svg#omnesregular-italic")
+      format("svg");
+}
+
+// Omnes Medium
+@font-face {
+  font-family: "omnesmedium";
+  font-style: normal;
+  font-weight: $bold-font-weight;
+  src: url("#{$font-path}/omnesmedium-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omnesmedium-webfont.woff") format("woff"),
+    url("#{$font-path}/omnesmedium-webfont.ttf") format("truetype"),
+    url("#{$font-path}/omnesmedium-webfont.svg#omnesmedium") format("svg");
+}
+
+// Omnes Bold
+@font-face {
+  font-family: "omnesbold";
+  font-style: normal;
+  font-weight: $bold-font-weight;
+  src: url("#{$font-path}/omnes-bold-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omnes-bold-webfont.woff") format("woff"),
+    url("#{$font-path}/omnes-bold-webfont.ttf") format("truetype"),
+    url("#{$font-path}/omnes-bold-webfont.svg#omnesbold") format("svg");
+}
+
+// Omnes SemiBold
+@font-face {
+  font-family: "omnessemibold";
+  font-style: normal;
+  font-weight: $bold-font-weight;
+  src: url("#{$font-path}/omnessemibold-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omnessemibold-webfont.woff") format("woff"),
+    url("#{$font-path}/omnessemibold-webfont.ttf") format("truetype"),
+    url("#{$font-path}/omnessemibold-webfont.svg#omnessemibold") format("svg");
+}
+
+// Omnes SemiBold Italic
+@font-face {
+  font-family: "omnessemibold-italic";
+  font-style: normal;
+  font-weight: $bold-font-weight;
+  src: url("#{$font-path}/omnessemibold-italic-webfont.woff2") format("woff2"),
+    url("#{$font-path}/omnessemibold-italic-webfont.woff") format("woff"),
+    url("#{$font-path}/omnessemibold-italic-webfont.ttf") format("truetype"),
+    url("#{$font-path}/omnessemibold-italic-webfont.svg#omnessemibold-italic")
+      format("svg");
+}
+
+// AM-icon
+@font-face {
+  font-family: "AM-icon";
+  font-style: normal;
+  font-weight: normal;
+  src: url("#{$font-path}/AM-icon.woff2") format("woff2"),
+    url("#{$font-path}/AM-icon.ttf") format("truetype"),
+    url("#{$font-path}/AM-icon.woff") format("woff"),
+    url("#{$font-path}/AM-icon.svg#AM-icon") format("svg");
+}
+
+// ---------- Definitions ---------
+
+body {
+  line-height: $base-line-height;
+  font-family: $font-stack;
+  font-size: $base-font-size;
+  font-weight: $medium-font-weight;
+  color: color("grey-dark");
+}
+
+h1,
+.h1 {
+  line-height: 1;
+  font-size: 42px;
+  font-weight: $light-font-weight;
+  color: color("blue");
+}
+
+h2,
+.h2 {
+  line-height: 1;
+  font-size: 35px;
+  font-weight: $light-font-weight;
+  color: color("blue");
+}
+
+h3,
+.h3 {
+  line-height: 1;
+  font-size: 26px;
+  font-weight: $light-font-weight;
+  color: color("grey-dark");
+}
+
+h4,
+.h4 {
+  line-height: 1.08;
+  font-size: 22px;
+  font-weight: $medium-font-weight;
+  color: color("grey-dark");
+}
+
+h5,
+.h5 {
+  line-height: 1.08;
+  font-size: 22px;
+  font-weight: $light-font-weight;
+  color: color("grey-dark");
+}
+
+strong {
+  font-weight: $bold-font-weight;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.am-caption {
+  font-size: $small-font-size;
+  font-style: italic;
+}
+
+// ---------- Body Text ---------
+
+.am-body-text {
+  line-height: $base-line-height;
+  font-size: $base-font-size;
+  font-weight: $medium-font-weight;
+  color: color("grey-dark");
+
+  &--bold {
+    font-weight: $bold-font-weight;
+  }
+}
+
+.am-body-text--intro {
+  line-height: 1.16;
+  font-size: 21px;
+}
+
+.am-body-text--small {
+  font-size: $small-font-size;
+}
+
+.am-legal {
+  line-height: 1.29;
+  font-size: $small-font-size;
+  font-weight: $medium-font-weight;
+  color: color("grey-dark");
+}
+
+.am-font-light {
+  font-family: "omneslight", Calibri, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.am-font-light-italic {
+  font-family: "omneslight-italic", Calibri, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.am-font-regular {
+  font-family: "omnesregular", Calibri, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.am-font-regular-italic {
+  font-family: "omnesregular-italic", Calibri, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+}
+
+.am-font-medium {
+  font-family: "omnesmedium", Calibri, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.am-font-bold {
+  font-family: "omnesbold", Calibri, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.am-font-semibold {
+  font-family: "omnessemibold", Calibri, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+.am-font-semibold-italic {
+  font-family: "omnessemibold-italic", Calibri, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: color("link-blue");
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ---------- Responsive ---------
+
+@include media-query("sm") {
+  h1,
+  .h1 {
+    font-size: 50px;
+  }
+
+  h2,
+  .h2 {
+    font-size: 40px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 30px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 25px;
+  }
+
+  h5,
+  .h5 {
+    font-size: 25px;
+  }
+
+  .am-body-text--intro {
+    font-size: 25px;
+  }
+}

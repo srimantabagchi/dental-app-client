@@ -1,0 +1,97 @@
+/*------------------------------------*\
+   Input Validation Form Bubble
+\*------------------------------------*/
+
+/*
+ * Form validation message that pops up when a form field is invalid.
+ *
+ * .am-bubble applies the base styling
+ * [aria-hidden] animates the bubble to hidden in an accessible way
+ * .am-bubble--right applies positioning for text input and select
+ * .am-bubble--left applies positioning for radios and checkboxes
+ * .am-bubble--center applies positioning for centered bubble
+ * .am-bubble--error applies the error validation styles
+ * .am-bubble--info applies the info bubble styles
+ */
+
+// ---------- Input Validation Form Bubble ---------
+
+.am-bubble {
+  $validation-icon-offset: "100% - 22px";
+  $bubble-offset: $base-font-size;
+  opacity: 1;
+  position: absolute;
+  transform: scale(1);
+  min-width: 13em;
+  max-width: 35em;
+  padding: 10px 15px;
+  font-size: $small-font-size;
+  text-align: center;
+  color: color("black");
+  transition: visibility 0s linear 0.25s,
+    transform 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+    opacity 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  will-change: transition, opacity;
+
+  // aria-hidden is an accessibility attribute that hides content from screen-readers
+  // the hidden bubble state is styled with aria-hidden so it is accessibile by default
+  &[aria-hidden] {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  &--right {
+    @include make-arrow(1.625em, "pink", "bottom", $validation-icon-offset);
+    position: absolute;
+    right: 0;
+    bottom: 80%;
+    transform-origin: calc(#{$validation-icon-offset}) calc(100% + 4px);
+  }
+
+  &--left {
+    @include make-arrow(1.625em, "pink", "bottom", $bubble-offset);
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 0;
+    transform-origin: $bubble-offset calc(100% + 4px);
+  }
+
+  &--center {
+    @include make-arrow(1.625em, "alert-info", "bottom");
+    position: absolute;
+    bottom: 30px;
+    transform: scale(1) translateX(15px) translateX(-50%);
+    transform-origin: 11px calc(100% + 4px);
+
+    // the centered bubble must keep its centered alignment when closing
+    &[aria-hidden] {
+      transform: scale(0) translateX(11px) translateX(-50%);
+    }
+  }
+
+  &--error {
+    margin-bottom: 14px;
+    background-color: color("pink");
+    font-weight: $bold-font-weight;
+    color: color("white");
+
+    // make sure the arrow color is the same as the bubble color
+    &::after {
+      border-top-color: color("pink");
+    }
+  }
+
+  &--info {
+    bottom: 46px;
+    background-color: color("alert-info");
+
+    &::after {
+      border-top-color: color("alert-info");
+    }
+  }
+}
+
+.am-bubble__info-container {
+  display: inline-block;
+  position: relative;
+}

@@ -1,0 +1,44 @@
+/*------------------------------------*\
+    Functional Buttons
+\*------------------------------------*/
+
+/*
+ * Styling for Functional Buttons
+ */
+
+// ---------- Functional Button Structure ---------
+.am-functional-button {
+  display: inline-block;
+  font-size: $base-font-size;
+  font-weight: $bold-font-weight;
+  white-space: nowrap;
+  text-decoration: none !important;
+  color: color("link-blue");
+  cursor: pointer;
+
+  &--left {
+    margin-right: 6px;
+  }
+
+  &--right {
+    margin-left: 6px;
+  }
+
+  &--dark {
+    color: color("black");
+  }
+
+  &--light {
+    color: color("white");
+  }
+}
+
+.am-functional-button__text {
+  display: inline-block;
+  vertical-align: middle;
+
+  .am-functional-button:hover &,
+  .am-functional-button:focus & {
+    text-decoration: underline;
+  }
+}
