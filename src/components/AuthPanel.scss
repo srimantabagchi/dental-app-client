@@ -1,0 +1,25 @@
+.user-profile {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.user {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-right: 15px;
+  background: right 0% / 1px 100% no-repeat linear-gradient(#979797, #979797);
+}
+.user > .avatar {
+  height: 20px;
+  width: 20px;
+  border: 1px solid #979797;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}

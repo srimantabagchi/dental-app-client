@@ -1,0 +1,98 @@
+@import "./BaseVariables.scss";
+
+.navbar-links-wrapper {
+  width: 100%;
+  height: 60px;
+  background-color: $bb8-bg-color;
+  overflow: hidden;
+  .navbar-links {
+    width: 1366px;
+    @media screen and (max-width: 1365px) {
+      width: 100%;
+    }
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 1 0;
+    align-items: center;
+    margin: 0 auto;
+    > nav {
+      display: inherit;
+      height: auto;
+      > a {
+        display: block;
+        height: auto;
+        line-height: 45px;
+        color: #7c7e80;
+        font-family: Omnes;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.25px;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 8px 50px;
+        margin-right: 0;
+        &:first-child {
+          margin-right: 0;
+        }
+        &.active {
+          color: $bb8-primary-color;
+          background: top left / 100% 4px no-repeat
+            linear-gradient($bb8-primary-color, $bb8-primary-color);
+        }
+      }
+    }
+
+    > .user-profile {
+      position: absolute;
+      right: 0;
+    }
+  }
+  .navbar-sub-links {
+    width: 1366px;
+    @media screen and (max-width: 1365px) {
+      width: 100%;
+    }
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 1 0;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #3a84b2;
+    > nav {
+      display: inherit;
+      height: auto;
+      > a {
+        display: block;
+        height: 100%;
+        line-height: 45px;
+        font-family: Omnes;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.25px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        padding: 8px 50px;
+        margin-right: 0;
+        &:first-child {
+          margin-right: 0;
+        }
+        &.active {
+          background-color: #317099;
+        }
+      }
+    }
+  }
+
+  .btn-login {
+    margin-left: auto;
+  }
+}
+
+.sub-header {
+  background-color: #3a84b2;
+}

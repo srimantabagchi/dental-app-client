@@ -8,10 +8,19 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bb8": "https://d7ec01559a8a0dafff9a528c38600b94ebea8a93@github.com/LoyaltyOne/bb8.git#v0.5-beta",
+    "classnames": "^2.2.6",
+    "downshift": "^5.4.5",
+    "formik": "^2.1.4",
+    "moment": "^2.27.0",
     "node-sass-chokidar": "^1.5.0",
+    "rambda": "^5.8.0",
     "react": "^16.13.1",
+    "react-dates": "^21.8.0",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-slick": "^0.26.1"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
